@@ -1,0 +1,157 @@
+#panel{
+	position: relative;
+	background: transparent;
+	margin: auto;
+ 	padding: 20px 0 20px 0;
+	width: 92%;
+	max-width: 880px;
+	height: 420px;
+}
+
+#globe-reader .image-frame{
+	display: inline-block;
+	border-radius: 0.4em;
+	background: #fcfcfc;
+	border: 1px solid rgba(0,0,0,0.1);
+	padding: 0.5em;
+}
+
+#panel .globe-wrapper{
+	position: relative;
+	width: 560px;
+	margin: auto;
+}
+
+#globe{
+	position: relative;
+	width: 560px;
+	height: 560px;
+	color: #000;
+	-webkit-perspective: 500px; 
+	perspective: 50px; 
+}
+
+#globe.no-webgl{
+	text-align: center;
+}
+
+#globe canvas{
+	width: 100%;
+	height: 100%;
+	z-index: 5;
+	position: absolute;
+}
+
+#globe-shadow{
+	display: none !important;
+	width: 100%;
+	height: auto;
+	z-index: 1;
+	position: absolute;
+	top: 95%;
+}
+
+#globe-preloader{
+	position:absolute;
+	width: 180px;
+	left: 50%;
+	top: 50%;
+	margin-left: -90px;
+	margin-top: -2.5em;
+	color: #888;
+	text-align: center;
+	z-index: 10;
+}
+
+#globe-reset-button{
+	position: absolute;
+	opacity: 0.33;
+	width: 32px;
+	height: 32px;
+	cursor: pointer;
+	background-color: rgba(255, 255, 255, 0.67);
+	padding: 4px;
+	border-radius: 4px;
+	left: 50%;
+	margin-left: -16px;
+	margin-top: -16px;
+	top: 50%;
+	-webkit-transition: all 0.33s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+	-ms-transition:     all 0.33s cubic-bezier(0.645, 0.045, 0.355, 1.000); 
+	transition:         all 0.33s cubic-bezier(0.645, 0.045, 0.355, 1.000); 
+	z-index: 10;
+}
+
+#globe-reset-button.hidden{
+	opacity: 0.0;
+	cursor: auto;
+	pointer-events: none;
+}
+
+#globe-reset-button:not(.hidden):hover{
+	opacity: 1.0;
+	background-color: rgba(255, 255, 255, 0.8);
+	box-shadow:  0px 2px 5px 2px rgba(0, 0, 0, 0.25);
+}
+
+#globe-reset-button img{
+	opacity: 0.75;
+	width: 100%;
+	height: 100%;
+	-webkit-transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+	-ms-transition:     all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1.000); 
+	transition:         all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1.000); 
+}
+
+#globe-reset-button:hover img{
+	width: 100%;
+	height: 100%;
+	-webkit-transform: rotate(-180deg); 
+	-ms-transform:     rotate(-360deg); 
+	transform:         rotate(-180deg); 
+}
+
+/* hover labels of employees */
+
+#globe-poi-label {
+	position: absolute;
+	z-index: 10;
+	opacity: 0.0;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+	-webkit-transform:  scale(1) translateZ(-10px) translateY(10px) rotateX(45deg);
+	transform:          scale(1) translateZ(-10px) translateY(10px) rotateX(45deg);
+	-webkit-transition: transform 0.15s, opacity 0.15s;
+	transition:         transform 0.15s, opacity 0.15s;
+}
+
+#globe-poi-label.visible {
+	-webkit-transform: none;
+	transform:         none;
+	opacity: 1.0;
+}
+
+#globe-poi-label span{
+	color:  #fff;
+	font-size: 0.9em;
+	white-space: nowrap;
+	display: block;
+	background-color: rgba(0, 0, 0, 0.75);
+	border-radius: 5px;
+	padding: 4px;
+}
+
+#globe-poi-label .arrow{
+	width: 0;
+	height: 0;
+	margin-left:  auto;
+	margin-right: auto;
+	border-left: 7px solid transparent;
+	border-right: 7px solid transparent;
+	border-top: 10px solid rgba(0, 0, 0, 0.75);
+}
+
+.poi{
+	display: none;
+}
